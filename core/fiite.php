@@ -5,8 +5,7 @@ namespace core;
 class fiite{
     public static $classMap = array();
     static public function run() {
-        p('ok');
-        $route = new \core\route();
+        $route = new \core\lib\route();
     }
 
     static public function load($class) {
