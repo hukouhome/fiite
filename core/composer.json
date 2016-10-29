@@ -1,0 +1,16 @@
+{
+  "name": "FIITE PHP",
+  "description": "PHP Framework",
+  "type": "FrameWork",
+  "keywords": [
+    "PHP","PHP Framework","FIITE"
+  ],
+  "require": {
+    "php": ">= 5.3.0",
+    "filp/whoops": "*",
+    "symfony/var-dumper": "*",
+    "catfan/medoo": "*",
+    "twig/twig": "*",
+    "codeguy/upload": "*"
+  }
+}

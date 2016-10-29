@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="content">
+    <!--left-->
+    <div class="left" id="c_left">
+        <div class="s_tuijian">
+            <h2>文章<span>推荐</span></h2>
+        </div>
+        <div class="content_text">
+            <!--wz-->
+            <div class="wz">
+                <h3>{{ data.title }}</h3>
+                <span class="left sj">时间:{{ data.createtime|date("Y-m-d") }}</span>
+                <img src="/upload/images/{{ data.gb_img }}"  alt="">
+                {{ data.content|raw }}
+                <div class="clear"></div>
+
+            </div>
+            <!--wz end-->
+
+        </div>
+    </div>
+
+    <!--left end-->
+    <!--right-->
+    {{ include('right.html') }}
+    <!--right end-->
+    <div class="clear"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="content">
+    <!--left-->
+    <div class="left" id="c_left">
+        <div class="s_tuijian">
+            <h2>文章<span>推荐</span>
+                <div id="message">{{ message }}</div>
+            </h2>
+        </div>
+        <div class="content_text">
+            {% for val in data %}
+            <!--wz-->
+            <div class="wz">
+                <h3><a href="/index/detail/id/{{ val.id }}" title="{{ val.title }}">{{ val.title }}</a></h3>
+                <dl>
+                    <dt><img src="/upload/images/{{ val.gb_img }}" width="200"  height="123" alt=""></dt>
+                    <dd>
+                        <p class="dd_text_1">{{ val.content }}</p>
+                        <p class="dd_text_2">
+                            <span class="left author">Town</span><span class="left sj">时间:{{ val.createtime|date("Y-m-d") }}</span>
+                            <span class="left fl">分类:<a href="#" title="学无止境">学无止境</a></span><span class="left yd">
+                            <a href="/index/del/id/{{ val.id }}" title="删除留言">删除留言</a>
+               </span>
+                        <div class="clear"></div>
+                        </p>
+                    </dd>
+                    <div class="clear"></div>
+                </dl>
+            </div>
+            <!--wz end-->
+            {% endfor %}
+
+
+        </div>
+    </div>
+    <!--left end-->
+    <!--right-->
+    {{ include('right.html') }}
+    <!--right end-->
+    <div class="clear"></div>
+</div>
+{% endblock %}

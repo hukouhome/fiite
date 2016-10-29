@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人博客</title>
+    <meta name="keywords" content="个人博客" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/assets/css/index.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <script type="text/javascript" src="/assets/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--header start-->
+<div id="header">
+    <h1>个人博客</h1>
+    <p>青春是打开了,就合不上的书。人生是踏上了，就回不了头的路，爱情是扔出了，就收不回的赌注。</p>
+</div>
+
+<!--header end-->
+<!--nav-->
+<div id="nav">
+    <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="#">关于我</a></li>
+        <li><a href="/">碎言碎语</a></li>
+        <li><a href="#">个人日记</a></li>
+        {% if is_logged_in %}
+            <li><a href="/index/add">留言板</a></li>
+            <li><a href="#">欢迎{{ user_data.username}}--{{ user_data.id}}</a></li>
+            <li><a href="/user/logout">退出</a></li>
+        {% else %}
+            <li><a href="/user/register">注册</a></li>
+            <li><a href="/user/login">登录</a></li>
+        {% endif %}
+        <div class="clear"></div>
+    </ul>
+</div>
+<!--nav end-->
+<!--content start-->
+
+{% block content %}
+
+{% endblock %}
+
+<!--content end-->
+<!--footer start-->
+<div id="footer">
+    <p>Design by:<a href="http://hukouhome.com" target="_blank">少年</a> 2016-9-19</p>
+</div>
+<!--footer end-->
+<script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
+<script  type="text/javascript" src="/assets/js/nav.js"></script>
+</body>
+</html>
